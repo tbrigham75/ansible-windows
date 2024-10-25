@@ -1,0 +1,3 @@
+---
+- import_playbook: install-apps-with-chocolatey.yaml
+- import_playbook: windows-updates.yaml

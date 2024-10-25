@@ -1,0 +1,5 @@
+---
+- name: Install Choco
+  hosts: windows
+  roles:
+    - install-chocolatey

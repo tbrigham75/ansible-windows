@@ -1,0 +1,5 @@
+---
+- name: Running Windows Updates
+  hosts: windows
+  roles:
+    - windows-updates

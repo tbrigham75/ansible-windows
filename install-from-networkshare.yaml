@@ -1,0 +1,17 @@
+---
+- name: Install picasa from a network share
+  hosts: windows
+
+  tasks:
+  - name: Install picasa from a network share with specific credentials
+    ansible.windows.win_package:
+      path: \\192.168.2.100\downloads\Picasa\picasa39-setup.exe
+      product_id: picasa
+      arguments: /S
+      state: present
+    become: true
+    become_method: runas
+    become_flags: logon_type=new_credential logon_flags=netcredentials_only
+    vars:
+      ansible_become_user: HOME\da.thomas.brigham
+      ansible_become_password: Passwordhere

@@ -1,0 +1,11 @@
+---
+- name: ChocolateyInstall.ps1
+  copy:
+    src: "ChocolateyInstall.ps1"
+    dest: "C:\\Users\\da.thomas.brigham\\ChocolateyInstall.ps1"
+
+- name: Ensure Chocolatey installed from internal repo
+  win_chocolatey:
+    name: chocolatey
+    state: present
+    source: https://gist.github.com/jeromedecoster/8080501#file-chocolateyinstall-ps1

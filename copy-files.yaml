@@ -1,0 +1,20 @@
+---
+- name: Copy Files
+  hosts: windows
+
+  tasks:
+
+  - name: Touch a file (creates if not present, updates modification time if present)
+    ansible.windows.win_file:
+      path: C:\Temp\
+      state: directory
+
+  - name: Copy picasa to C:\temp
+    ansible.windows.win_copy:
+      src: files/picasa39-setup.exe
+      dest: C:\Temp
+
+  - name: Install picasa
+    ansible.windows.win_package:
+      path: C:\temp\picasa39-setup.exe
+      state: present
